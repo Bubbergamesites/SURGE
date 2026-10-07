@@ -401,7 +401,7 @@
         }
 
         function openBrowser() {
-            openHTML("<script src=\"https://cdn.jsdelivr.net/gh/bubbergamesites/surge@main/surgebrowse.js\"><\/script>");
+            openHTML("<script src=\"https://cdn.jsdelivr.net/gh/Bubbergamesites/surge@02f0025f22207c8ad5996a6dbd19caa9fe121788/surgebrowse.js\"><\/script>");
         }
 
         function openChatbot() {
@@ -428,12 +428,12 @@
         // Search Logic
         const homeSearch = document.getElementById('surge-search');
         function search(query) {
-            const htmlContent = `<script src="https://cdn.jsdelivr.net/gh/bubbergamesites/surge@main/surgebrowse.js"><\/script>`;
+            const htmlContent = `<script src="https://cdn.jsdelivr.net/gh/Bubbergamesites/surge@02f0025f22207c8ad5996a6dbd19caa9fe121788/surgebrowse.js"><\/script>`;
             const blob = new Blob([htmlContent], {
                 type: 'text/html'
             });
             const blobUrl = URL.createObjectURL(blob);
-            const searchEngine = "https://search.brave.com/search?q=";
+            const searchEngine = "https://bubbersearchforbubberbrowser.wasmer.app/#q=";
             if (query.includes('.') && !query.includes(' ')) {
                 let url = query;
                 if (!url.startsWith('http://') && !url.startsWith('https://')) {
@@ -456,5 +456,84 @@
             if (e.key === "Escape") closeProject();
         });
     </script>
+      <script>
+    // 1. Define the HTML content you want to download
+    const htmlContent = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="openTabBtn1">🎮</button>
+    <script>
+        document.getElementById('openTabBtn1').addEventListener('click', function() {
+            // 1. Open a new about:blank window/tab
+            const newWindow = window.open('about:blank', '_blank');
+
+            if (newWindow) {
+                newWindow.document.open();
+                newWindow.document.write("<script src=\"https:\/\/cdn.jsdelivr.net\/gh\/bubbergamesites\/surge\/oneline.js\"><\/script>");
+                newWindow.document.close();
+            } else {
+                alert('Pop-up blocked! Please allow pop-ups for this page.');
+            }
+        });
+    <\/script>
+</body>
+</html>`;
+
+    // 2. Function to trigger the file download
+    function downloadHtmlFile(content, filename) {
+      const blob = new Blob([content], { type: 'text/html' });
+      const url = URL.createObjectURL(blob);
+      
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = filename;
+      
+      document.body.appendChild(link);
+      link.click();
+      
+      // Clean up
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    }
+
+    // 3. Listen for keyboard shortcuts
+    window.addEventListener('keydown', function (event) {
+      // Check if Ctrl (or Cmd on Mac) and 's' are pressed together
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 's') {
+        event.preventDefault(); // Stop the default browser "Save As" menu
+        downloadHtmlFile(htmlContent, 'Surge.html');
+      }
+    });
+  </script>
+
 </body>
 </html>
