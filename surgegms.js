@@ -1219,6 +1219,7 @@
                     "konkrio",
                     "koopasrevenge",
                     "kourio",
+                    "Krillion",
                     "ks2teams",
                     "laceysflashgames",
                     "lastfirered",
@@ -2715,7 +2716,7 @@
             popular: {
                 icon: '⭐',
                 name: 'Popular Games',
-                games: ["slope", "ShellShockers", "1v1lol", "subwaysurferssanfrancisco", "retrobowl", "basketballstars", "basketrandom", "motox3m", "drifthunters", "smashkarts", "bitlife", "cookieclicker", "fnaf", "fridaynightfunkin", "geometrydashscratch", "supermario64", "sonicmania", "pokemonemerald", "tetris", "pacman", "stickmanhook", "vex5", "amongus", "fallguys", "happywheels", "run3", "fireboyandwatergirl", "agario", "slitherio", "paperio", "justfalllol", "stumbleguys", "pokemonshowdown"]
+                games: ["slope", "ShellShockers", "1v1lol", "Krillion", "subwaysurferssanfrancisco", "retrobowl", "basketballstars", "basketrandom", "motox3m", "drifthunters", "smashkarts", "bitlife", "cookieclicker", "fnaf", "fridaynightfunkin", "geometrydashscratch", "supermario64", "sonicmania", "pokemonemerald", "tetris", "pacman", "stickmanhook", "vex5", "amongus", "fallguys", "happywheels", "run3", "fireboyandwatergirl", "agario", "slitherio", "paperio", "justfalllol", "stumbleguys", "pokemonshowdown"]
             },
             new: {
                 icon: '🆕',
